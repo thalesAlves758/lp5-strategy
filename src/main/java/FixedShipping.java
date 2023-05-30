@@ -9,6 +9,10 @@ public class FixedShipping implements ShippingStrategy {
         this.shippingPrice = shippingPrice;
     }
 
+    public double getShippingPrice() {
+        return shippingPrice;
+    }
+
     @Override
     public double calculateShipping() {
         return shippingPrice;
