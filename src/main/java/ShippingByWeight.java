@@ -1,11 +1,11 @@
 public class ShippingByWeight implements ShippingStrategy {
     private double weight;
-    private double shippingPriceByGram;
+    private double shippingPriceByGramSlice;
     private double gramWeightSlice;
 
-    public ShippingByWeight(double weight, double shippingPriceByGram, double gramWeightSlice) {
+    public ShippingByWeight(double weight, double shippingPriceByGramSlice, double gramWeightSlice) {
         this.weight = weight;
-        this.shippingPriceByGram = shippingPriceByGram;
+        this.shippingPriceByGramSlice = shippingPriceByGramSlice;
         this.gramWeightSlice = gramWeightSlice;
     }
 
@@ -17,12 +17,12 @@ public class ShippingByWeight implements ShippingStrategy {
         this.weight = weight;
     }
 
-    public double getShippingPriceByGram() {
-        return shippingPriceByGram;
+    public double getShippingPriceByGramSlice() {
+        return shippingPriceByGramSlice;
     }
 
-    public void setShippingPriceByGram(double shippingPriceByGram) {
-        this.shippingPriceByGram = shippingPriceByGram;
+    public void setShippingPriceByGramSlice(double shippingPriceByGramSlice) {
+        this.shippingPriceByGramSlice = shippingPriceByGramSlice;
     }
 
     public double getGramWeightSlice() {
@@ -36,6 +36,6 @@ public class ShippingByWeight implements ShippingStrategy {
     @Override
     public double calculateShipping() {
         double numSlices = Math.ceil(weight / gramWeightSlice);
-        return numSlices * shippingPriceByGram;
+        return numSlices * shippingPriceByGramSlice;
     }
 }
